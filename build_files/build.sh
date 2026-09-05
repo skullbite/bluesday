@@ -2,26 +2,26 @@
 
 set -ouex pipefail
 
-# Copy the contents of system_files/ of the git repo to /
 cp -avf "/ctx/system_files"/. /
 
-### Install packages
+dnf -y remove plasma-discover firefox
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
+dnf -y copr enable scujas/plasma-applet-appgrid
+dnf -y install plasma-applet-appgrid
+dnf -y copr disable scujas/plasma-applet-appgrid
 
-# this installs a package from fedora repos
-dnf5 install -y tmux
+dnf -y copr enable infinality/kwin-effects-better-blur-dx 
+dnf -y install kwin-effects-better-blur-dx
+dnf -y copr disable infinality/kwin-effects-better-blur-dx
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+dnf -y copr enable ublue-os/packages
+dnf -y install bazaar
+dnf -y copr disable ublue-os/packages
 
-#### Example for enabling a System Unit File
+dnf -y copr enable imput/helium
+dnf -y install helium
+dnf -y copr disable imput/helium
+
+
 
 systemctl enable podman.socket
