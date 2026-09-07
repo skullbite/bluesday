@@ -6,6 +6,10 @@ cp -avf "/ctx/system_files"/. /
 
 dnf -y remove plasma-discover firefox
 
+dnf -y copr enable secureblue/packages
+dnf -y install homebrew
+dnf -y copr disable secureblue/packages
+
 dnf -y copr enable scujas/plasma-applet-appgrid
 dnf -y install plasma-applet-appgrid
 dnf -y copr disable scujas/plasma-applet-appgrid
@@ -21,7 +25,5 @@ dnf -y copr disable ublue-os/packages
 dnf -y copr enable imput/helium
 dnf -y install helium
 dnf -y copr disable imput/helium
-
-
 
 systemctl enable podman.socket
