@@ -6,9 +6,9 @@ cp -avf "/ctx/system_files"/. /
 
 dnf -y remove plasma-discover firefox
 
-dnf -y copr enable secureblue/packages
-dnf -y install homebrew
-dnf -y copr disable secureblue/packages
+dnf -y copr enable petersen/zerobrew
+dnf -y install zerobrew
+dnf -y copr disable petersen/zerobrew
 
 dnf -y copr enable scujas/plasma-applet-appgrid
 dnf -y install plasma-applet-appgrid
