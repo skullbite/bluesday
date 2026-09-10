@@ -5,6 +5,7 @@ set -ouex pipefail
 cp -avf "/ctx/system_files"/. /
 
 dnf -y remove plasma-discover firefox
+dnf -y install tailscale
 
 dnf -y copr enable petersen/zerobrew
 dnf -y install zerobrew
