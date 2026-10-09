@@ -19,6 +19,10 @@ dnf -y copr disable infinality/kwin-effects-better-blur-dx
 # dnf -y install bazaar
 # dnf -y copr disable ublue-os/packages
 
+dnf -y copr enable faugus/faugus-launcher
+dnf -y install faugus-launcher
+dnf -y copr disable faugus/faugus-launcher
+
 dnf -y copr enable imput/helium
 dnf -y install helium
 dnf -y copr disable imput/helium
